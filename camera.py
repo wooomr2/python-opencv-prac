@@ -5,7 +5,8 @@ import paho.mqtt.client as mqtt
 import json
 from ultralytics import YOLO
 
-model = YOLO("yolov8n.pt")
+# model = YOLO("yolov8n.pt")
+model = YOLO("numbers-best.pt")
 
 broker = "localhost"
 port = 1883
@@ -63,7 +64,7 @@ def detect_objects(image: np.array):
 
 # cam_addr = "rtsp://admin:admin123@203.24.58.146:8888/cam1"
 cam_addr = 0
-cap = cv2.VideoCapture(cam_addr)
+cap = cv2.VideoCapture(1)
 
 while cap.isOpened():
     ret, frame = cap.read()
